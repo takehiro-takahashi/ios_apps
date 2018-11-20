@@ -1,4 +1,4 @@
-# Swift Image View Sample
+# Swift CountUp Sample
 
 - first view
 ![alt text](./first_view.png)
