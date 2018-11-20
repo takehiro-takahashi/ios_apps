@@ -9,12 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var countLabel: UILabel!
+    
+    // countLabelに反映する数値
+    var result: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func plus(_ sender: Any) {
+        
+        result += 1
+        countLabel.text = "\(result)"
+        
+    }
+    
+    @IBAction func minus(_ sender: Any) {
+        
+        result -= 1
+        countLabel.text = "\(result)"
+        
+    }
+    
 }
 
