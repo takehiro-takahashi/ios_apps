@@ -8,13 +8,51 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet var mailTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var mailLabel: UILabel!
+    @IBOutlet var passwordLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //  textFieldDelegateをtextFieldを使っている箇所で使えるようにする
+        mailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //  キーボードを閉じる
+        textField.resignFirstResponder()
+
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+        closeKeyboard()
+
     }
 
-
+    @IBAction func signin(_ sender: Any) {
+        
+        //  キーボードを閉じる
+        closeKeyboard()
+        
+        //  結果の結合
+        mailLabel.text = mailTextField.text!
+        passwordLabel.text = passwordTextField.text!
+        
+    }
+    
+    func closeKeyboard() {
+        
+        mailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        
+    }
+    
 }
 
