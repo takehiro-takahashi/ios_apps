@@ -9,12 +9,38 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var backImageView: UIImageView!
+    
+    // backImageViewの画像を切り替えるために、countをflagとして利用
+    var count: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // 読み込んだタイミングで1を入れておく
+        count = 1
     }
-
+    
+    
+    @IBAction func change(_ sender: Any) {
+        
+        if (count == 0) {
+            
+            backImageView.image = UIImage(named: "back1.jpg")
+            
+            count = 1
+            
+        } else if (count == 1) {
+            
+            backImageView.image = UIImage(named: "back2.jpg")
+            
+            count = 0
+            
+        }
+        
+    }
+    
 
 }
 
