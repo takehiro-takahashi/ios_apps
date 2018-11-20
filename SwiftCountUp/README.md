@@ -7,5 +7,5 @@
 ![alt text](./plus_button_tap_action.png)
 
 - minus button tap action result view
-0のときにminusボタンをタップすると、警告が表示されます
+- 0のときにminusボタンをタップすると、警告が表示されます
 ![alt text](./minus_button_tap_action.png)
